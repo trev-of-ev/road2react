@@ -27,17 +27,28 @@ const App = () => {
       <Search />
 
       <hr />
-
+      <List />
+      <List />
       <List />
     </div>
   );
 };
 
 const Search = () => {
+  //perform a task
+  const handleChange = (event: { target: { value: any } }) => {
+    console.log(event);
+    console.log(event.target.value);
+  };
   return (
     <div>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <input
+        id="search"
+        type="text"
+        onChange={handleChange}
+        onBlur={handleChange}
+      />
     </div>
   );
 };
